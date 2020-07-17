@@ -81,8 +81,8 @@ int main() {
     std::vector<bool> indexToDeleteVector(std::size(vector), false);
     std::vector<bool> indexToDeleteMap(MAX_N, false);
     
-    std::vector<std::vector<unsigned int>> indexesOfValuesVector(MAX_LIMIT_TO_GENERATE_VALUES + 1); // [value] - contains all indexes i such as vector[i] == value
-    std::vector<std::vector<unsigned int>> indexesOfValuesMap(MAX_LIMIT_TO_GENERATE_VALUES + 1); // [value]- contains all indexes i such as map[i] == value
+    std::vector<std::vector<unsigned int>> indexesOfValuesVector(MAX_LIMIT_TO_GENERATE_VALUES + 1); // [value] - contains all indexes i such that vector[i] == value
+    std::vector<std::vector<unsigned int>> indexesOfValuesMap(MAX_LIMIT_TO_GENERATE_VALUES + 1); // [value]- contains all indexes i such that map[i] == value
     
     for (unsigned int index = 0; index < std::size(vector); ++index) {
         indexesOfValuesVector[vector[index]].push_back(index);
@@ -126,6 +126,7 @@ int main() {
     LogResult(vector);
     LogResult(map);
     
+    // check result
     {
         std::vector<int> vectorValues = vector;
         std::sort(std::begin(vectorValues), std::end(vectorValues));
